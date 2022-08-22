@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambiente - Municipalidad de Anisacate</title>
+    <link rel=stylesheet href="./assets/bootstrap/css/bootstrap.min.css">
+    <link rel=stylesheet href="./css/styles.css">
+    <script>
+        localStorage.setItem('lista', '[ "1.Espinillo", "2.Garabato", "3.Tusca", "4.Algarrobo" ]');
+    </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body>
+    <main class="main">
+        <header class="header-inicio">
+
+            <nav class="navbar navbar-expand-lg navbar-light ">
+                <a class="navbar-brand" href="#">
+                    <img src="./assets/Ambiente.png" class="logo-ambiente" height="100px" width="300px">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbCollapse"
+                    aria-controls="navbCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </nav>
+        </header>
+
+        <section class="container-principal">
+            <h1
+                style="color: rgb(175, 247, 60); text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                Funciones del Area</h1>
+            <p
+                style="color: rgb(255, 255, 255); text-align: center; font-weight: 600; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; padding: 100px; padding-top: 20px; padding-bottom: 20px; font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                Arbitrar los medios y recursos necesarios disponibles para garantizar la preservación y cuidado del
+                ambiente, desarrollando,coordinando y ejecutando políticas ambientales de acuerdo a lo indicado en las
+                ordenanzas, haciendo cumplir las normativas municipales, provinciales y nacionales,tendientes a prevenir
+                el
+                daño ambiental, a proteger el ambiente y a contribuir al desarrollo sostenible.
+            </p>
+            <div class="container-images">
+                <div>
+                    <img src="./assets/Arbolado Nativo.jpg" width="300" height="300" style="box-shadow: 89px 35px 205px 7px rgba(26,255,104,1);
+                    -webkit-box-shadow: 89px 35px 205px 7px rgba(26,255,104,1);
+                    -moz-box-shadow: 89px 35px 205px 7px rgba(26,255,104,1); border-radius: 40px">
+                    <h3 style="color: rgb(175, 247, 60); text-align: center;">ARBOLADO NATIVO </h3>
+                </div>
+                <div>
+                    <img src="./assets/voluntariado.webp" width="300" height="300" style="box-shadow: 89px 35px 205px 7px rgba(26,255,104,1);
+                    -webkit-box-shadow: 89px 35px 205px 7px rgba(26,255,104,1);
+                    -moz-box-shadow: 89px 35px 205px 7px rgba(26,255,104,1); border-radius: 40px">
+                    <h3 style="color: rgb(175, 247, 60); text-align: center;">VOLUNTARIADO</h3>
+                </div>
+                <div>
+                    <img src="./assets/Normativa ambiental.jpg" width="300" height="300" style="box-shadow: 89px 35px 205px 7px rgba(26,255,104,1);
+                    -webkit-box-shadow: 89px 35px 205px 7px rgba(26,255,104,1);
+                    -moz-box-shadow: 89px 35px 205px 7px rgba(26,255,104,1); border-radius: 40px">
+                    <h3 style="color: rgb(175, 247, 60); text-align: center;">NORMATIVA AMBIENTAL</h3>
+                </div>
+            </div>
+            <div class="container-section">
+                <section id="section-youtube">
+                    <iframe width="560" height="450" src="https://www.youtube.com/embed/XmQxgd03RwM"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </section>
+
+                <section id="section-mapa">
+                    <h3 style="margin-bottom: 20px; color: rgb(0, 252, 0); text-align: center;">
+                        <img src="./assets/logo ubicación.png" height="50px">
+                        PUNTOS VERDES EN TU BARRIO
+                    </h3>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16146.060018108756!2d-64.40229034312712!3d-31.707945062697668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x942d569154450d5d%3A0xd8ba2df1ec921afa!2sMunicipalidad%20de%20Anisacate!5e0!3m2!1ses-419!2sar!4v1650314190797!5m2!1ses-419!2sar"
+                        width="560" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </section>
+            </div>
+
+            <div style="display: flex; flex-direction: column;">
+                <h1 style="margin-bottom: 20px; color: rgb(0, 252, 0); text-align: center;">Simula tu compra de Arboles
+                    Nativos
+                    <h1 style="color:white; text-align: center; margin-top: 10px; font-size:26px">
+                        Lista de arboles
+                    </h1>
+                    <div style="display:flex; justify-content:center; margin-bottom:10px">
+                        <h5 style="color:wheat; padding:0 10px" id="arboles"></h5>
+                    </div>
+
+                    <div style="display:flex">
+                        <button onclick="mostrarArboles()" type="button" class="btn btn-success"
+                            style="margin:0 auto">Mostrar</button>
+
+                    </div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; margin: 20px 0;">
+                <h1 style="margin-bottom: 20px; color: rgb(255, 255, 255); text-align: center; font-size:26px">Compra
+                    tus
+                    arboles nativos
+                </h1>
+                <div style="display:flex; justify-content:center; margin-bottom:10px">
+                    <h5 style="color:wheat; padding:0 10px" id="compraArboles"></h5>
+                </div>
+                <!-- <h5 style="color:wheat; text-align: center;" id="total">$0</h5> -->
+                <div style="display:flex; justify-content: space-evenly; margin-bottom: 10px;">
+                    <button onclick="agregarArbol()" type="button" class="btn btn-success">Agregar</button>
+                    <button onclick="eliminarArbol()" type="button" class="btn btn-success">Eliminar</button>
+                </div>
+
+                <form class="form-group input mb-3" id="formulario">
+                    <label for="exampleInputEmail1" style="color:white">Ingrese la cantidad de arboles</label>
+                    <input type="text" class="form-control" placeholder="Ingrese la cantidad" id="cantidad"
+                        onchange="cambiarCantidad(event)">
+
+                    <label for="exampleInputEmail1" style="color:white">Ingrese una A si es Plantin o una B si es
+                        Arbol</label>
+                    <input type="text" class="form-control" placeholder="Ingrese tipo de arbol" id="tipoDeArbol"
+                        onchange="cambiarTipoArbol(event)">
+                </form>
+                <!-- <h5 style="color:wheat; text-align: center;" id="calculoTotal">$0</h5> -->
+                <button onclick="calcularTotal()" type="button" class="btn btn-success" style="margin:0 auto">Calcular
+                    Compra de Arboles</button>
+            </div>
+
+
+        </section>
+
+        <aside class="aside">
+            <a href="https://www.argentina.gob.ar/ambiente/biblioteca">
+                <img src="./assets/btn_biblioteca_ambiente.png" style="width: 100%;height: 100%">
+            </a>
+        </aside>
+
+
+
+        <footer class="footer">
+            <img class="logomuni" src="./assets/MUNI.png" height="100 px">
+            <div class="derecha">
+                <div class="redes">
+                    <img src="./assets/wsp logo.png" height="50px">
+                    <img src="./assets/fb logo.png" height="50px">
+                    <img src="./assets/ig logo.png" height="50px">
+                    <img src="./assets/twitter logo.png" height="50px">
+                </div>
+                <div>
+                    <h5 style="color: aliceblue; text-align: end;"> Municipalidad de Anisacate <br>
+                        Salomon Palacios 15. Villa Anisacate. Córdoba. República Argentina <br>
+                        3547- 494052
+                    </h5>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+
+
+</html>

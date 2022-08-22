@@ -1,0 +1,341 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-image: linear-gradient(to right bottom, #000000, #1a0b09, #271408, #2f1f02, #2e2c00, #333f00, #305303, #1d6912, #1f8a13, #1fad13, #19d10f, #07f607);
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-area: section;
+    opacity: 1;
+	animation-name: fade;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header-inicio {
+    background-color: #00B902;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    grid-area: head;
+}
+
+@media only screen and (max-width: 1024px) {
+    .header-inicio {
+        flex-direction: column;
+
+    }
+}
+
+.header-inicio>.logo-ambiente {
+    height: 80px;
+    width: 300px;
+}
+
+.header-inicio>nav>.lista-menu {
+    width: 700px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: aliceblue;
+    padding-inline-start: 0px;
+    border: 3px solid black;
+
+}
+  
+
+@media only screen and (max-width: 1024px) {
+    .header-inicio>nav>.lista-menu {
+        width: 100vw;
+        flex-wrap: wrap;
+    }
+}
+
+.header-inicio>nav>.lista-menu>li>a {
+    color: black;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.header-inicio>nav>.lista-menu>li>a:hover {
+    box-shadow: inset 0 0 20px rgba(32, 245, 4, 0.5), 0 0 20px rgba(7, 240, 57, 0.4);
+    outline-color: rgba(49, 138, 172, 0);
+    outline-offset: 80px;
+    text-shadow: 1px 1px 6px rgb(48, 255, 7);
+  }
+
+.footer {
+    background-color: #00B902;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+    color: antiquewhite;
+    grid-area: footer;
+}
+
+.redes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+@keyframes fade {
+	0% {
+		opacity: 0.40;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+#section-youtube {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding: 10px;
+}
+
+#section-mapa{
+    padding: 10px;
+}
+
+.container-section {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    margin-top: 30px;
+    padding-bottom: 50px;
+    
+}
+
+@media only screen and (max-width: 1024px) {
+    .container-section {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.container-images {
+    display: flex;
+    justify-content: space-evenly;
+}
+.container-images:hover {filter: saturate(180%);}
+
+.organigrama:hover {
+    transform:scale(1.1);}
+
+@media only screen and (max-width: 1024px) {
+    .container-images {
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+p{
+    animation-duration: 5s;
+    animation-name: slidein; 
+}
+@keyframes slidein {
+    from {
+      margin-left:100%;
+      width:300%
+    }
+  
+    to {
+     margin-left:0%;
+     width:100%;
+   }
+  }
+.acercade {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 80px;
+}
+
+.container-img {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    display: grid;
+    max-width: 800px;
+    padding: 1rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 200px 200px 200px 200px 200px;
+    grid-gap: 1rem;
+}
+
+.button{
+    width: 200px;
+    height: 200px;
+    background-color: rgba(43, 250, 7, 0.9);
+    transform: skew(5deg,5deg);
+}
+.button:hover{
+animation: vibra 1s;
+  }
+  @keyframes vibra{
+      0%  {transform:rotateZ(-5deg); }
+      50% {transform:rotateZ( 0deg) scale(.8); }
+      100%{transform:rotateZ( 5deg); }
+  }
+
+
+.item-a {
+    grid-column: 1 / 5;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    border-radius: 20px;
+    height: 300px;
+}
+
+.item-b {
+    grid-column: 1 / 3;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    border-radius: 20px;
+    height: 300px;
+}
+
+.item-c {
+    grid-column: 3 / 5;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    border-radius: 20px;
+    height: 300px;
+}
+
+.item-d {
+    grid-column: 1 / 5;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    border-radius: 20px;
+    height: 300px;
+}
+
+.item-e {
+    grid-column: 1 / 5;
+    grid-row: 4/6;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    border-radius: 20px;
+    height: 300px;
+}
+
+.item-a:hover,.item-b:hover,.item-c:hover,.item-d:hover,.item-e:hover {
+    transform:scale(1.05);
+    }
+
+.contacto>label {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+    color: rgb(85, 116, 85);
+}
+
+.contacto {
+    margin-left: 30%;
+    margin-top: 50px;
+    margin-right: 30%;
+}
+
+.aside {
+    grid-area: aside;
+}
+
+@media only screen and (max-width: 1024px) {
+    .aside {
+        display: none;
+    }
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    /* grid-template-rows: 15% 70% 15%; */
+    grid-template-areas: "head head"
+        "section aside"
+        "footer footer";
+}
+
+
+@media only screen and (max-width: 1024px) {
+    .main {
+        grid-template-areas: "head head"
+            "section section"
+            "footer footer";
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    iframe {
+        width: 80vw;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .footer {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .logomuni {
+        width: 70vw;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .container-img {
+        grid-template-columns: none;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .tituloredes {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .buscador {
+        font-size: 20px !important;
+        padding: 0 !important;
+    }
+}
+
+.input{
+    width:350px;
+    margin:auto;
+    margin-top:15px;
+}
