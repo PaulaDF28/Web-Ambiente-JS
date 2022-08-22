@@ -34,19 +34,24 @@ const calcularTotal = () => {
     let cantidad = document.getElementById("cantidad");
     let tipoArbol = document.getElementById("tipoDeArbol");
     let resultado = 0;
-    if (tipoArbol.value == "A") {
-        resultado = resultado + 400;
-    }
-    if (tipoArbol.value == "B") {
-        resultado = resultado + 700;
-    }
-    resultado = resultado * parseInt(cantidad.value);
 
-    swal({
-        
-        icon: "success",
-        text: "Total $" + resultado,
-        title: "Abonas y retiras en cualquiera de nuestras sedes!",
-        buttons: ["Cancelar", "Confirmar!"],
-      });
+    if (parseInt(cantidad.value) >= 1 && (tipoArbol.value == "A" || tipoArbol.value == "B")) {
+        let precio = tipoArbol.value == "A" ? 400 : 700;
+        resultado = parseInt(cantidad.value) * precio
+
+        swal({
+            icon: "success",
+            text: "Total $" + resultado,
+            title: "Abonas y retiras en cualquiera de nuestras sedes!",
+            buttons: ["Cancelar", "Confirmar!"],
+        });
+    }
+    else {
+        swal({
+            icon: "error",
+            text: "Ingresa datos correctos!",
+            buttons: ["Volver"],
+        });
+    }
+
 }
